@@ -3,16 +3,25 @@ console.log("playground__running...")
 document.addEventListener('DOMContentLoaded', function () {
     var splide = new Splide(`.splide`, {
         type: 'slide',
-        perPage: 1,
-        arrows: true,
-        mediaQuery: 'max',
+        gap: 0,
+        pagination: false,
+        flickPower: 400,
+        snap: false,
+        interval: 3000,
+        speed: 1000,
         breakpoints: {
-            768: {
-                arrows: false,
-                pagination: true,
+            1920: {
+                pagination: false,
+                padding: {
+                    left: 0,
+                    right: 0
+                }
             },
-        },
-        pagination: false
+            600: {
+                arrows: false,
+                pagination: true
+            }
+        }
     })
     splide.mount();
 });
