@@ -52,15 +52,15 @@ function scrollCorrectionSplide() {
 
 setTimeout(() => {
 
-    const splideContainer = document.querySelector('.splide');
+    const splideContainer = document.querySelector('.splide__slide');
 
-count = 0;
+count = 10;
 
     // Prevent hijacking vertical scrolling
    splideContainer?.addEventListener('touchstart', (event) => {
     console.log('HERE')
   
-    if(count === 0) {
+    if(count === 10) {
       alert(count)
       count = count + 1
     }
