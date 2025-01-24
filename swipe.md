@@ -1,0 +1,2 @@
+### Helpful SO links on swipe/scroll
+- [Controlling vertical scrolling and horizontal swiping](https://stackoverflow.com/questions/20130070/controlling-vertical-scrolling-and-horizontal-swiping-on-a-list-in-an-ios-web-ap)

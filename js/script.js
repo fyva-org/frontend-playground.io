@@ -26,3 +26,53 @@ document.addEventListener('DOMContentLoaded', function () {
     splide.mount();
 });
 
+/*
+window.addEventListener('touchstart', (e) => {
+    // console.log('userScrolled -->')
+    console.log('-- e.target --')
+    console.log(e.target)
+    const ElemBeingSwiped = e.target
+    const isSplideElem = ElemBeingSwiped.closest('.splide')
+    console.log('isSplideElem')
+    console.log(isSplideElem)
+    if (isSplideElem) {
+         
+    }
+    // console.log(_.de)
+    // window.scrollBy(0 , parseInt(userScrolled, 10))
+})
+
+function scrollCorrectionSplide() {
+    _.debouce(() => {
+        let userScrolled = (window.pageYOffset !== undefined) ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop;
+        window.scrollBy(0 , parseInt(userScrolled, 10))
+    }, 1000);
+}
+*/
+
+const splideContainer = document.querySelector('.splide');
+
+count = 0;
+
+// Prevent hijacking vertical scrolling
+splideContainer.addEventListener('touchstart', (event) => {
+
+  if(count === 0) {
+    alert(count)
+    count = count + 1
+  }
+  // Store the initial touch position
+  splideContainer.startY = event.touches[0].clientY;
+  splideContainer.startX = event.touches[0].clientX;
+}, { passive: true });
+
+splideContainer.addEventListener('touchmove', (event) => {
+  const deltaY = Math.abs(event.touches[0].clientY - splideContainer.startY);
+  const deltaX = Math.abs(event.touches[0].clientX - splideContainer.startX);
+
+  // Allow vertical scrolling if it's more significant than horizontal
+  if (deltaY > deltaX) {
+    event.stopPropagation(); // Stop carousel event propagation
+  }
+}, { passive: true });
+
