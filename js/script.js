@@ -50,7 +50,7 @@ function scrollCorrectionSplide() {
 }
 */
 
-
+/*
 setTimeout(() => {
 
     const splideContainer = document.querySelector('.splide__slide');
@@ -82,5 +82,6 @@ setTimeout(() => {
   }, { passive: true });
 
 }, 3000)
+*/
 
 
