@@ -55,13 +55,13 @@ setTimeout(() => {
 
     const splideContainer = document.querySelector('.splide__slide');
 
-count = 10;
+    count = 20;
 
     // Prevent hijacking vertical scrolling
    splideContainer?.addEventListener('touchstart', (event) => {
     console.log('HERE')
   
-    if(count === 10) {
+    if(count === 20) {
       alert(count)
       count = count + 1
     }
