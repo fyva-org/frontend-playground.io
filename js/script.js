@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
         snap: false,
         interval: 3000,
         speed: 1000,
+        waitForTransition: true,
         breakpoints: {
             1920: {
                 pagination: false,
