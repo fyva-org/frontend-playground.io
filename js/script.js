@@ -1,4 +1,3 @@
-console.log("playground__running...")
 
 document.addEventListener('DOMContentLoaded', function () {
     var splide = new Splide(`.splide`, {
@@ -50,29 +49,37 @@ function scrollCorrectionSplide() {
 }
 */
 
-const splideContainer = document.querySelector('.splide');
+
+setTimeout(() => {
+
+    const splideContainer = document.querySelector('.splide');
 
 count = 0;
 
-// Prevent hijacking vertical scrolling
-splideContainer.addEventListener('touchstart', (event) => {
+    // Prevent hijacking vertical scrolling
+   splideContainer?.addEventListener('touchstart', (event) => {
+    console.log('HERE')
+  
+    if(count === 0) {
+      alert(count)
+      count = count + 1
+    }
+    // Store the initial touch position
+    splideContainer.startY = event.touches[0].clientY;
+    splideContainer.startX = event.touches[0].clientX;
+  }, { passive: true });
+  
+  splideContainer?.addEventListener('touchmove', (event) => {
+    console.log('INSIDE HERE')
+    const deltaY = Math.abs(event.touches[0].clientY - splideContainer.startY);
+    const deltaX = Math.abs(event.touches[0].clientX - splideContainer.startX);
+  
+    // Allow vertical scrolling if it's more significant than horizontal
+    if (deltaY > deltaX) {
+      event.stopPropagation(); // Stop carousel event propagation
+    }
+  }, { passive: true });
 
-  if(count === 0) {
-    alert(count)
-    count = count + 1
-  }
-  // Store the initial touch position
-  splideContainer.startY = event.touches[0].clientY;
-  splideContainer.startX = event.touches[0].clientX;
-}, { passive: true });
+}, 3000)
 
-splideContainer.addEventListener('touchmove', (event) => {
-  const deltaY = Math.abs(event.touches[0].clientY - splideContainer.startY);
-  const deltaX = Math.abs(event.touches[0].clientX - splideContainer.startX);
-
-  // Allow vertical scrolling if it's more significant than horizontal
-  if (deltaY > deltaX) {
-    event.stopPropagation(); // Stop carousel event propagation
-  }
-}, { passive: true });
 
