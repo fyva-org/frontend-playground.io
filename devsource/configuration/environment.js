@@ -3,10 +3,10 @@ const path = require('path');
 module.exports = {
   paths: {
     /* Path to source files directory */
-    source: path.resolve(__dirname, '../src/'),
+    source: path.resolve(__dirname, '../src/js/'),
 
     /* Path to built files directory */
-    output: path.resolve(__dirname, '../dist/'),
+    output: path.resolve(__dirname, '../../assets/'),
   },
   server: {
     host: 'localhost',
