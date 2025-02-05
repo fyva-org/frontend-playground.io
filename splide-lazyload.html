@@ -24,28 +24,37 @@
 
 <body>
     <header class="header">
-        <h1>SplideJS Playground</h1>
+        <h1>Splide Lazyload Playground</h1>
     </header>
     <section class="splide my-5" aria-label="Splide Basic HTML Example">
         <div class="container">
             <div class="splide__track">
                 <ul class="splide__list">
                     <li class="splide__slide">
-                        <img src="images/testing-banner-1.jpg" alt="" />
+                        <img data-splide-lazy="images/testing-banner-1.jpg" alt="" />
                     </li>
                     <li class="splide__slide">
-                        <img src="images/testing-banner-2.jpg" alt="" />
+                        <img data-splide-lazy="images/testing-banner-2.jpg" alt="" />
                     </li>
                     <li class="splide__slide">
-                        <img src="images/testing-banner-3.jpg" alt="" />
+                        <img data-splide-lazy="images/testing-banner-3.jpg" alt="" />
                     </li>
+                    <li class="splide__slide">
+                        <img data-splide-lazy="images/slide1_banner_one.png" alt="" />
+                    </li>
+                    <li class="splide__slide">
+                        <img data-splide-lazy="images/slide1_banner_two.jpg" alt="" />
+                    </li>
+                    <li class="splide__slide">
+                        <img data-splide-lazy="images/slide1_banner_three.png" alt="" />
+                    </li>
+
                 </ul>
             </div>
         </div>
     </section>
     <!-- <script src="assets/index.js"></script> -->
-    <script src="js/script.js"></script>
-
+    <script src="js/splide-lazyload.js"></script>
 </body>
 
 </html>
