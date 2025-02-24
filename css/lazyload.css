@@ -1,0 +1,39 @@
+*,*:after,*:before {
+    box-sizing: border-box;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+}
+
+.orange {
+    background: orange;
+}
+
+.tomato {
+    background: tomato;
+}
+
+
+.hero__banner {
+    min-height: 100vh;
+}
+
+.image__grid, .image__grid__container {
+    text-align: center;
+    padding: 3rem 0;
+    border: 1px solid rgba(0 , 0 ,0 , 0.15);
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    grid-template-columns: repeat(2 , minmax(200px, 1fr));
+    align-content: center;
+    gap: 16px;
+}
+
+img {
+    max-width: 100%;
+    max-width: 150px;
+    margin: 0 auto;
+}
