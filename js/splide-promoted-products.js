@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
         drag: 'free',
         arrows: false,
         pagination: false,
+        fixedWidth: 200,
     })
     splide.mount();
 });
