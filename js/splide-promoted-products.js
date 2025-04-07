@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
         arrows: false,
         pagination: false,
         fixedWidth: 200,
+        // padding: { right: '5%' }
     })
     splide.mount();
 });
