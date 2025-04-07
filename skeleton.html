@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skeleton Loading Demo</title>
+  <link rel="stylesheet" href="./css/skeleton.css">
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      <!-- Skeleton elements (shown by default) -->
+      <div class="skeleton-loader">
+        <div class="skeleton-avatar"></div>
+        <div class="skeleton-line"></div>
+        <div class="skeleton-line"></div>
+      </div>
+
+      <!-- Actual content (hidden until loaded) -->
+      <div class="content" style="display: none;">
+        <img src="https://placehold.co/400x400" class="avatar" alt="User">
+        <h2>Loaded Content Title</h2>
+        <p>This is the actual content that appears after loading.</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="/js/skeleton.js"></script>
+</body>
+</html>
