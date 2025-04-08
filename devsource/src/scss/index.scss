@@ -1,5 +1,5 @@
 @import url("./components/test.scss");
-
+@import url("./pages/custom-pagination.scss");
 .indexPage {
     background-color: blue;
 }
@@ -11,7 +11,7 @@
 }
 
 body {
-    height: 400vh;
+    // height: 400vh;
 }
 
 .header {
@@ -25,6 +25,10 @@ body {
     text-transform: uppercase;
     letter-spacing: 8px;
     margin: 0;
+}
+
+.splide__list {
+    overflow-x: scroll;
 }
 
 .splide__slide {
