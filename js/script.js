@@ -1,12 +1,13 @@
 
 document.addEventListener('DOMContentLoaded', function () {
     var splide = new Splide(`.splide`, {
+        autoplay: false,
         type: 'slide',
         gap: 0,
         pagination: false,
         flickPower: 400,
         snap: false,
-        interval: 3000,
+        interval: 1000,
         speed: 500,
         waitForTransition: true,
         breakpoints: {
@@ -24,7 +25,27 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     })
     splide.mount();
+
+
+    setTimeout(() => {
+        console.log('splide');
+        console.log(splide);
+
+        /*
+            -
+            
+        */
+
+        /*
+            - clone the element.
+            - remove the element.
+            - store the element.
+            - re-add if required.
+        */
+        // splide.remove(1)
+    }, 10000)
 });
+
 
 /*
 window.addEventListener('touchstart', (e) => {

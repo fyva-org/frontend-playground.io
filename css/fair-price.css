@@ -1,0 +1,250 @@
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 200;
+  src: url(https://cdn.shopify.com/s/files/1/0670/1291/9527/files/plusjakartasans-ext.woff2?v=1702450716) format('woff2');
+  unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 200;
+  src: url(https://cdn.shopify.com/s/files/1/0670/1291/9527/files/plusjakartasans.woff2?v=1702379299) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 300;
+  src: url(https://cdn.shopify.com/s/files/1/0670/1291/9527/files/plusjakartasans-ext.woff2?v=1702450716) format('woff2');
+  unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 300;
+  src: url(https://cdn.shopify.com/s/files/1/0670/1291/9527/files/plusjakartasans.woff2?v=1702379299) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://cdn.shopify.com/s/files/1/0670/1291/9527/files/plusjakartasans-ext.woff2?v=1702450716) format('woff2');
+  unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://cdn.shopify.com/s/files/1/0670/1291/9527/files/plusjakartasans.woff2?v=1702379299) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 500;
+  src: url(https://cdn.shopify.com/s/files/1/0670/1291/9527/files/plusjakartasans-ext.woff2?v=1702450716) format('woff2');
+  unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 500;
+  src: url(https://cdn.shopify.com/s/files/1/0670/1291/9527/files/plusjakartasans.woff2?v=1702379299) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 600;
+  src: url(https://cdn.shopify.com/s/files/1/0670/1291/9527/files/plusjakartasans-ext.woff2?v=1702450716) format('woff2');
+  unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 600;
+  src: url(https://cdn.shopify.com/s/files/1/0670/1291/9527/files/plusjakartasans.woff2?v=1702379299) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: url(https://cdn.shopify.com/s/files/1/0670/1291/9527/files/plusjakartasans-ext.woff2?v=1702450716) format('woff2');
+  unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: url(https://cdn.shopify.com/s/files/1/0670/1291/9527/files/plusjakartasans.woff2?v=1702379299) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 800;
+  src: url(https://cdn.shopify.com/s/files/1/0670/1291/9527/files/plusjakartasans-ext.woff2?v=1702450716) format('woff2');
+  unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 800;
+  src: url(https://cdn.shopify.com/s/files/1/0670/1291/9527/files/plusjakartasans.woff2?v=1702379299) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+}
+
+header {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    /* background: #E3E452; */
+    /* background: linear-gradient(90deg,rgba(227, 228, 82, 1) 0%, rgba(150, 240, 104, 1) 100%); */
+    padding: 1rem;
+    text-align: center;
+    /* display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    justify-content: space-around; */
+    font-weight: 600;
+    overflow: hidden;
+    font-size: 14px;
+    position: relative;
+}
+
+.anim-delay-one {
+    animation-delay: 0.25s;
+}
+
+.anim-delay-two {
+    animation-delay: 0.5s;
+}
+
+.animate__animated {
+    animation-duration: 0.75s;
+}
+
+header > span {
+  position: relative;
+  display: inline-block;
+}
+
+.icon--image {
+  max-width: 20px;
+}
+
+header > span .icon {
+  margin-right: 4px;
+}
+
+.cool-border::after {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(270deg, #e3e452, #96f068, #e3e452);
+  background-size: 400% 400%;
+  border-radius: inherit;
+  z-index: -1;
+  animation: borderMove 6s ease infinite;
+}
+
+@keyframes borderMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.white-thunder:before {
+  animation: bgslide 1.5s ease-in infinite;
+  background-repeat: no-repeat;
+  background-size: 30% 100%;
+  background: linear-gradient(135deg, transparent 40%, hsla(0, 0%, 100%, 0.3) 50%, transparent 60%);
+  border-radius: 16px;
+  content: "";
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+@keyframes bgslide {
+  0% {
+    transform: translate(-100%) skew(-30deg);
+  }
+
+  100% {
+      transform: translate(100%) skew(-30deg);
+  }
+}
+
+header > span:nth-of-type(2) {
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+header > span:nth-of-type(3) .icon {
+  transform: rotate(45deg);
+  display: inline-block;
+}
+
+/* header > span:after {
+  position: absolute;
+  content: '';
+  left: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+header > span:nth-of-type(1):after {
+  position: absolute;
+  content: '✈️';
+  left: 100%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+header > span:nth-of-type(2):after {
+  position: absolute;
+  content: '🛍️';
+  left: 100%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+header > span:nth-of-type(3):after {
+  position: absolute;
+  content: '🏷️';
+  left: 100%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+} */
