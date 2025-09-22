@@ -1,129 +1,137 @@
 import { parseTime, parseCurrentTime, currentDate, normalizeDate } from '../util/func-utils.js';
 
-/**
- * create a simple checker for a slide dataset (works for DOM element.dataset or parsed HTML dataset)
- */
-function createTimerChecker(dataset) {
-  const startDate = dataset.startDate;
-  const endDate = dataset.endDate;
-  const startTime = dataset.startTime;
-  const endTime = dataset.endTime;
-  const timerEnabled = dataset.timerCheckbox === 'true';
-
-  function isInWindow() {
-    if (!startDate || !endDate || !startTime || !endTime) return false;
-    const s = normalizeDate(startDate);
-    const e = normalizeDate(endDate);
-    const dateOk = currentDate() >= s && currentDate() <= e;
-    const timeOk = parseCurrentTime() >= parseTime(startTime) && parseCurrentTime() < parseTime(endTime);
-    return dateOk && timeOk;
-  }
+const createUtilFunc = () => {
+  let splideInstance;
+  let originalOrder = new Map();
+  let removedSlides = new Map();
+  let timerActivated = false;
 
   return {
-    isTimerEnabled: () => timerEnabled,
-    shouldShow: () => timerEnabled && isInWindow(),
-    isExpired: () => endDate ? currentDate() > normalizeDate(endDate) : false
-  };
-}
+    initializer: function (splide) {
+      if (!splide) return;
+      splideInstance = splide;
 
-/**
- * Attach timer logic to a mounted Splide instance.
- * Usage:
- *   const splide = new Splide('.splide', options).mount();
- *   const controller = attachSplideTimer(splide, { pollInterval: 1000 });
- *
- * Returns { stop() } so you can stop polling if needed.
- */
-export function attachSplideTimer(splideInstance, { pollInterval = 1000 } = {}) {
-  if (!splideInstance || !splideInstance.root) {
-    console.warn('attachSplideTimer: pass a mounted Splide instance (after .mount())');
-    return { stop: () => {} };
-  }
+      const slides = splideInstance.root.querySelectorAll('.splide__slide');
+      slides.forEach((slide, index) => {
+        if (!slide.dataset.timerId) slide.dataset.timerId = `timer-${index}-${Date.now()}`;
+        originalOrder.set(slide.dataset.timerId, index);
+      });
 
-  const root = splideInstance.root;
-  // assign stable ids and remember original order
-  const initialSlides = Array.from(root.querySelectorAll('.splide__slide'));
-  const originalOrder = initialSlides.map((s, i) => {
-    if (!s.dataset.timerId) s.dataset.timerId = `timer-${i}-${Date.now()}`;
-    return s.dataset.timerId;
-  });
-  const originalIndexMap = new Map(originalOrder.map((id, idx) => [id, idx]));
+      this._initialPass();
+      this.pollCompDisplayProps();
+    },
 
-  // store removed slides: id -> { html, originalIndex }
-  const removedMap = new Map();
+    _getCompDateAndTime: function (dataset) {
+      const startDate = dataset.startDate;
+      const endDate = dataset.endDate;
+      const startTime = dataset.startTime;
+      const endTime = dataset.endTime;
+      const timerEnabled = dataset.timerCheckbox === 'true';
+      return { startDate, endDate, startTime, endTime, timerEnabled };
+    },
 
-  function computeInsertionIndex(originalIndex) {
-    const currentIds = Array.from(root.querySelectorAll('.splide__slide')).map(s => s.dataset.timerId);
-    let pos = 0;
-    for (const id of currentIds) {
-      const idx = originalIndexMap.get(id);
-      if (idx < originalIndex) pos++;
-      else break;
-    }
-    return pos;
-  }
+    _getDisplayProps: function (dataset) {
+      const { startDate, endDate, startTime, endTime, timerEnabled } = this._getCompDateAndTime(dataset);
+      if (!timerEnabled || !startDate || !endDate || !startTime || !endTime) return false;
 
-  function removeSlideElement(el) {
-    const slidesNow = Array.from(root.querySelectorAll('.splide__slide'));
-    const idx = slidesNow.indexOf(el);
-    if (idx === -1) return;
-    const id = el.dataset.timerId;
-    removedMap.set(id, { html: el.outerHTML, originalIndex: originalIndexMap.get(id) ?? slidesNow.length });
-    splideInstance.remove(idx);
-  }
+      const sDate = normalizeDate(startDate);
+      const eDate = normalizeDate(endDate);
+      const isDateValid = currentDate() >= sDate && currentDate() <= eDate;
+      const isTimeValid = parseCurrentTime() >= parseTime(startTime) && parseCurrentTime() < parseTime(endTime);
+      return isDateValid && isTimeValid;
+    },
 
-  function addSlideById(id) {
-    const data = removedMap.get(id);
-    if (!data) return;
-    const insertionIndex = computeInsertionIndex(data.originalIndex);
-    splideInstance.add(data.html, insertionIndex);
-    removedMap.delete(id);
-  }
+    _toggleParentSection: function(hide = true) {
+        if(hide) {
+          splideInstance.root.closest('.timer--section').classList.add('hidden--timer--section');
+          return
+        }
+        splideInstance.root.closest('.timer--section').classList.remove('hidden--timer--section');
+    },
 
-  // initial pass: remove timer slides that shouldn't show now
-  Array.from(root.querySelectorAll('.splide__slide')).forEach(slide => {
-    // only manage slides with explicit timer enabled
-    if (slide.dataset.timerCheckbox !== 'true') return;
-    const checker = createTimerChecker(slide.dataset);
-    if (!checker.shouldShow()) removeSlideElement(slide);
-  });
+    pollCompDisplayProps: function () {
+      const interval = setInterval(() => {
+        // Remove slides that are invalid now
+        const currentSlides = splideInstance.root.querySelectorAll('.splide__slide');
+        const activeVisibleSlides = [...currentSlides].map(slide => {
+          if (slide.dataset.timerCheckbox !== 'true') return false;
+          const shouldShow = this._getDisplayProps(slide.dataset);
+          if (!shouldShow) this._removeSlide(slide);
+          return shouldShow
+        });
 
-  // poll for changes (slides becoming valid/invalid)
-  const interval = setInterval(() => {
-    // 1) remove visible slides that became invalid
-    Array.from(root.querySelectorAll('.splide__slide')).forEach(slide => {
-      if (slide.dataset.timerCheckbox !== 'true') return;
-      const checker = createTimerChecker(slide.dataset);
-      if (!checker.shouldShow()) removeSlideElement(slide);
-    });
+        // Re-add removed slides that became valid
+        for (const [id, payload] of Array.from(removedSlides.entries())) {
+          const tmp = document.createElement('div');
+          tmp.innerHTML = payload.html.trim();
+          const slideEl = tmp.firstElementChild;
+          if (!slideEl) {
+            removedSlides.delete(id);
+            continue;
+          }
+          const shouldShow = this._getDisplayProps(slideEl.dataset);
+          if (shouldShow) {
+            this._addSlide(id);
+          }
+        }
 
-    // 2) add back removed slides that became valid
-    for (const [id, payload] of Array.from(removedMap.entries())) {
-      // parse payload.html to inspect dataset without adding to DOM
-      const tmp = document.createElement('div');
-      tmp.innerHTML = payload.html.trim();
-      const slideEl = tmp.firstElementChild;
-      if (!slideEl) { removedMap.delete(id); continue; }
-      const checker = createTimerChecker(slideEl.dataset);
-      if (checker.shouldShow()) {
-        addSlideById(id);
-      } else if (checker.isExpired()) {
-        // if the slide's end date has passed, we can permanently drop it from the pool
-        removedMap.delete(id);
+        (!activeVisibleSlides.includes(true)) ? this._toggleParentSection(true) : this._toggleParentSection(false)
+        
+        if (!timerActivated && removedSlides.size === 0) {
+          clearInterval(interval);
+        }
+      }, 1000);
+    },
+
+    _initialPass: function () {
+      const slides = Array.from(splideInstance.root.querySelectorAll('.splide__slide'));
+
+      const activeVisibleSlides = slides.map(slide => {
+        if (slide.dataset.timerCheckbox === 'true') {
+          const shouldShow = this._getDisplayProps(slide.dataset);
+          if (!shouldShow) this._removeSlide(slide);
+          return shouldShow
+        }
+        return false
+      });
+
+      timerActivated = slides.some(s => s.dataset.timerCheckbox === 'true');
+      if(!activeVisibleSlides.includes(true)) { this._toggleParentSection(true) }
+    },
+
+    _removeSlide: function (slide) {
+      const slidesNow = Array.from(splideInstance.root.querySelectorAll('.splide__slide'));
+      const idx = slidesNow.indexOf(slide);
+      if (idx === -1) return;
+      const id = slide.dataset.timerId;
+      removedSlides.set(id, { html: slide.outerHTML, originalIndex: originalOrder.get(id) });
+      splideInstance.remove(idx);
+    },
+
+    _addSlide: function (id) {
+      const data = removedSlides.get(id);
+      if (!data) return;
+      const insertionIndex = this._computeInsertionIndex(data.originalIndex);
+      splideInstance.add(data.html, insertionIndex);
+      removedSlides.delete(id);
+    },
+
+    _computeInsertionIndex: function (originalIndex) {
+      const currentIds = Array.from(splideInstance.root.querySelectorAll('.splide__slide')).map(s => s.dataset.timerId);
+      let pos = 0;
+      for (const id of currentIds) {
+        const idx = originalOrder.get(id);
+        if (idx < originalIndex) pos++;
+        else break;
       }
+      return pos;
     }
-
-    // optional stop: if nothing left to monitor, clear
-    const anyManagedStillPresent = Array.from(root.querySelectorAll('.splide__slide')).some(s => s.dataset.timerCheckbox === 'true');
-    if (!anyManagedStillPresent && removedMap.size === 0) {
-      clearInterval(interval);
-    }
-  }, pollInterval);
-
-  return {
-    stop() { clearInterval(interval); }
   };
 }
 
-
-
+// Usage example
+export function timerFuncForSplide(splideInstance) {
+  const utilFunc = createUtilFunc()
+  utilFunc.initializer(splideInstance);
+  return utilFunc
+}

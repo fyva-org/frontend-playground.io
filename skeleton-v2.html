@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css"
+        integrity="sha256-5uKiXEwbaQh9cgd2/5Vp6WmMnsUr3VZZw0a8rKnOKNU=" crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+        integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"
+        integrity="sha256-FZsW7H2V5X9TGinSjjwYJ419Xka27I8XPDmWryGlWtw=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"></script>
+
+    <link rel="stylesheet" href="./css/skeleton-v2.css">
+    <style>
+        .grid {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          /* 2 per row */
+          gap: 8px;
+          /* spacing */
+          max-width: 100%;
+        }
+
+        .image-wrapper {
+          position: relative;
+          width: 100%;
+          aspect-ratio: 3/4;
+          /* keeps fixed ratio */
+          overflow: hidden;
+        }
+
+        .skeleton {
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(135deg, #f2f2f2 25%, #e6e6e6 50%, #f2f2f2 75%);
+          background-size: 300% 300%;
+          animation: shimmer 4s ease-in-out infinite;
+        }
+
+        .skeleton {
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(90deg, #eee 25%, #ddd 37%, #eee 63%);
+          background-size: 200% 100%;
+          animation: shimmer 3s ease-in-out infinite;
+        }
+
+        .splide__slide {
+            aspect-ratio: 4/5;
+        }
+    </style>
+</head>
+<body>
+    
+    <div style="height:200vh;">
+
+    </div>
+    <div class="grid">
+        <div class="image-wrapper skeleton">
+            <img
+                data-src="images/promoted-products/1.webp" 
+                alt="Image 1"
+                class="lazy"
+            />
+        </div>
+        <div class="image-wrapper skeleton">
+            <img
+                data-src="images/promoted-products/2.jpg" 
+                alt="Image 2" 
+                class="lazy"
+            />
+        </div>
+        <div class="image-wrapper skeleton">
+            <img
+                data-src="./images/promoted-products/3.webp"
+                alt="Image 3" 
+                class="lazy"
+            />
+        </div>
+        <div class="image-wrapper skeleton">
+            <img
+                data-src="./images/Category-circles-v2/circle-2.png"
+                alt="Image 4" 
+                class="lazy"
+            />
+        </div>
+        <div class="image-wrapper skeleton">
+            <img
+                data-src="images/promoted-products/5.jpg" 
+                alt="Image 1" 
+                class="lazy"
+            />
+        </div>
+        <div class="image-wrapper skeleton">
+            <img
+                data-src="images/promoted-products/6.webp" 
+                alt="Image 2" 
+                class="lazy"
+            />
+        </div>
+        <div class="image-wrapper skeleton">
+            <img
+                data-src="images/promoted-products/7.webp" 
+                alt="Image 3" 
+                class="lazy"
+            />
+        </div>
+        <div class="image-wrapper skeleton">
+            <img
+                data-src="images/promoted-products/8.webp" 
+                alt="Image 4" 
+                class="lazy"
+            />
+        </div>
+        <div class="image-wrapper skeleton">
+            <img
+                data-src="images/promoted-products/9.webp" 
+                alt="Image 1" 
+                class="lazy"
+            />
+        </div>
+        <div class="image-wrapper skeleton">
+            <img
+                data-src="images/promoted-products/10.webp" 
+                alt="Image 2" 
+                class="lazy"
+            />
+        </div>
+        <div class="image-wrapper skeleton">
+            <img
+                data-src="images/promoted-products/11.webp" 
+                alt="Image 3" 
+                class="lazy"
+            />
+        </div>
+        <div class="image-wrapper skeleton">
+            <img
+                data-src="images/promoted-products/12.webp" 
+                alt="Image 4" 
+                class="lazy"
+            />
+        </div>
+    </div>
+    <div style="height:100vh;"></div>
+
+    <div>
+        
+        
+        <section class="splide splide__lazyload my-5" aria-label="Splide Basic HTML Example">
+            <div class="splide__track">
+                <ul class="splide__list">
+                    <li class="splide__slide skeleton">
+                        <img data-src="images/testing-banner-1.jpg" alt="" />
+                    </li>
+                    <li class="splide__slide skeleton">
+                        <img data-src="images/testing-banner-2.jpg" alt="" />
+                    </li>
+                    <li class="splide__slide skeleton">
+                        <img data-src="images/testing-banner-3.jpg" alt="" />
+                    </li>
+                    <li class="splide__slide skeleton">
+                        <img data-src="images/slide1_banner_one.png" alt="" />
+                    </li>
+                    <li class="splide__slide skeleton">
+                        <img data-src="images/slide1_banner_two.jpg" alt="" />
+                    </li>
+                    <li class="splide__slide skeleton">
+                        <img data-src="images/slide1_banner_three.png" alt="" />
+                    </li>
+                    <li class="splide__slide skeleton">
+                        <img data-src="images/testing-banner-1.jpg" alt="" />
+                    </li>
+                    <li class="splide__slide skeleton">
+                        <img data-src="images/testing-banner-2.jpg" alt="" />
+                    </li>
+                    <li class="splide__slide skeleton">
+                        <img data-src="images/testing-banner-3.jpg" alt="" />
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+
+    </div>
+
+    <script>
+
+
+      function logElementEvent(eventName, element) {
+        console.log(Date.now(), eventName, element.getAttribute("data-src"));
+      }
+
+      var callback_enter = function (element) {
+        logElementEvent("🔑 ENTERED", element);
+      };
+      var callback_exit = function (element) {
+        logElementEvent("🚪 EXITED", element);
+      };
+      var callback_loading = function (element) {
+        logElementEvent("⌚ LOADING", element);
+      };
+      var callback_loaded = function (element) {
+        logElementEvent("👍 LOADED", element);
+      };
+      var callback_error = function (element) {
+        logElementEvent("💀 ERROR", element);
+        element.src =
+          "./images/440x560-Error.webp";
+      };
+      var callback_finish = function () {
+        logElementEvent("✔️ FINISHED", document.documentElement);
+      };
+      var callback_cancel = function (element) {
+        logElementEvent("🔥 CANCEL", element);
+      };
+
+      window.lazyLoadInstances = [];
+      window.lazyLoadOptions = [
+        {
+          // Assign the callbacks defined above
+          elements_selector: '.lazy',
+          callback_enter: callback_enter,
+          callback_exit: callback_exit,
+          callback_cancel: callback_cancel,
+          callback_loading: callback_loading,
+          callback_loaded: callback_loaded,
+          callback_error: callback_error,
+          callback_finish: callback_finish,
+          cancel_on_exit: false
+        },
+        {
+          elements_selector: '.splide img',
+          // Assign the callbacks defined above
+          threshold: 100,
+          callback_enter: callback_enter,
+          callback_exit: callback_exit,
+          callback_loading: callback_loading,
+          callback_loaded: callback_loaded,
+          callback_error: callback_error,
+          callback_finish: callback_finish,
+          cancel_on_exit: false,
+          lazyloadType: 'SLIDER'
+        }
+      ];
+      window.addEventListener(
+        "LazyLoad::Initialized",
+        function (e) {
+          let instance = e.detail.instance;
+        //   debugger
+          console.log(instance);
+          if (instance._settings.lazyloadType) {
+            instance._settings.callback_enter = () => instance.loadAll()
+          }
+          lazyLoadInstances.push(instance);
+          /*
+            IMPORTANT :- Call load all.
+          */
+        },
+        false
+      );
+
+
+
+    </script>
+
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@19.1.3/dist/lazyload.min.js"
+    ></script>
+
+    <script>
+
+        var splide = new Splide('.splide__lazyload', {
+            gap: 16,
+            fixedWidth: 275,
+            pagination: false,
+            arrows: false,
+            lazyLoad: 'nearby'
+        });
+
+        splide.mount();
+        
+    </script>
+</body>
+</html>
