@@ -21,6 +21,19 @@
     <link rel="stylesheet" href="./css/FY-sales-card-alt.css">
 
     <style>
+        .salesCardAltAlp__container {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            grid-template-rows: auto;
+            gap: 16px;
+        }
+
+        .salesCardAltAlp__container--alt {
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-rows: auto;
+        }
+    </style>
+    <style>
         .splide--forceVisible {
             visibility: visible !important;
         }
@@ -87,11 +100,11 @@
     <main>
         <div style="height:100vh;"></div>
         <div style="height:100vh;"></div>
-        <div class="box section--spacing">
+        <div class="box container--page-width section--spacing">
             <div class="salesCardAltAlp__container salesCardAltAlp__container--alt" data-lazy="true">
 
 
-                <div class="salesCardAltAlp__ImgWrapper" style="--sales-card-image-ratio: 50.0%">
+                <div class="salesCardAltAlp__ImgWrapper" style="aspect-ratio:2/1;">
                     <a href="/collections/under-499" class="salesCardAltAlp__link">
                         <div class="skeleton--load">
                             <picture class="salesCardAltAlp__picture">
@@ -109,7 +122,7 @@
                 </div>
 
 
-                <div class="salesCardAltAlp__ImgWrapper" style="--sales-card-image-ratio: 50.0%">
+                <div class="salesCardAltAlp__ImgWrapper" style="aspect-ratio:2/1;">
                     <a href="/collections/under-999" class="salesCardAltAlp__link">
                         <div class="skeleton--load ">
                             <picture class="salesCardAltAlp__picture">
@@ -127,7 +140,7 @@
                 </div>
 
 
-                <div class="salesCardAltAlp__ImgWrapper" style="--sales-card-image-ratio: 50.0%">
+                <div class="salesCardAltAlp__ImgWrapper" style="aspect-ratio:2/1;">
                     <a href="/collections/lucky-size" class="salesCardAltAlp__link">
                         <div class="skeleton--load">
                             <picture class="salesCardAltAlp__picture">
@@ -144,8 +157,7 @@
                     </a>
                 </div>
 
-
-                <div class="salesCardAltAlp__ImgWrapper" style="--sales-card-image-ratio: 50.0%">
+                <div class="salesCardAltAlp__ImgWrapper" style="aspect-ratio:2/1;">
                     <a href="/collections/fyva-clearance-sale-nov" class="salesCardAltAlp__link">
                         <div class="skeleton--load">
                             <picture class="salesCardAltAlp__picture">
