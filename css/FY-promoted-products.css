@@ -1,0 +1,261 @@
+.box {
+    width: 100%;
+    margin: 0 auto;
+    display: block;
+    max-width: 1320px !important;
+}
+
+.section--spacing {
+    padding-top: 16px !important;
+    padding-bottom: 16px !important;
+}
+
+.promotedProductsAlp__item a {
+    text-decoration: none;
+    color: #222;
+}
+
+.promotedProductsAlp__view-more {
+    border: solid thin;
+    border-radius: 8px;
+    padding: 5px 0 5px 0;
+
+    p {
+        font-weight: 350;
+    }
+}
+
+.promotedProductsAlp__container {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 48px;
+    max-width: 100%;
+}
+
+.promotedProductsAlp__link {
+    display: block;
+    overflow: hidden;
+}
+
+.promotedProductsAlp__picture {
+    overflow: hidden;
+
+    img,
+    source {
+        max-width: 100%;
+        border-radius: 8px;
+        height: auto;
+    }
+}
+
+.promotedProductsAlp__container--alt {
+    display: block;
+}
+
+.promotedProductsAlp__item {
+    border-radius: 8px;
+    transition: 0.3s ease-in-out;
+    border: 1px solid transparent;
+    background-color: #ffffff;
+}
+
+.promotedProductsAlp__image-wrapper {
+    position: relative;
+    border-radius: 8px;
+}
+
+.promotedProductsAlp__product-info {
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.promotedProductsAlp__image {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.promotedProductsAlp__product-tag {
+    z-index: 1;
+    position: absolute;
+    background: #C4BEF8;
+    padding: 2px 4px 2px 4px;
+    border-radius: 2px;
+    font-size: 12px;
+    font-weight: 400;
+    top: 16px;
+    right: 10px;
+    text-align: center;
+}
+
+.promotedProductsAlp__brand {
+    width: 90%;
+    margin: 8px 0 0 8px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.promotedProductsAlp__product-title {
+    width: 90%;
+    margin: 4px 0 0 8px;
+    font-size: 14px;
+    font-weight: 400;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.promotedProductsAlp__price-detail {
+    display: flex;
+    margin: 16px 0 16px 8px;
+    justify-content: flex-start;
+
+    p {
+        margin-right: 10px;
+    }
+}
+
+.promotedProductsAlp__original-price {
+    color: #00000066;
+    font-size: 14px;
+    text-decoration: line-through;
+}
+
+.promotedProductsAlp__discount {
+    color: #0AA051;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.promotedProductsAlp__view-more {
+    display: none;
+}
+
+.curatedCollection__viewMore--margin {
+    margin-top: 16px;
+}
+
+@media screen and (min-width:768px) {
+    .promotedProductsAlp__item:hover {
+        box-shadow: 10px 10px 15px #0000000F;
+        border-color: #0000000F;
+        transform: scale(1.02, 1.02);
+    }
+
+    /* UI-revamp TODO :- Add min-height or max-height to `.promotedProductsAlp__picture` for consistent image sizing. */
+    /* .promotedProductsAlp__picture {
+        img,
+        source {
+            max-height: 320px;
+            object-fit: cover;
+        }
+    } */
+}
+
+/*
+@media only screen and (max-width: 768px){
+    .promotedProductsAlp__link--spacing {
+        margin-bottom: 10px;
+    }
+}
+*/
+
+@media screen and (max-width: 600px) {
+    /* UI-revamp TODO :- find fix for uneven grid -- https://imgur.com/a/C0Sl9oY */
+    /*
+		.promotedProductsAlp__image{
+        height: 184px;
+    }
+		*/
+
+    .promotedProductsAlp__container {
+        .splide {
+            visibility: visible;
+        }
+    }
+
+    .promotedProductsAlp__product-tag {
+        font-size: 8px;
+        top: 10px;
+    }
+
+    .promotedProductsAlp__brand {
+        margin: 4px 0 0 8px;
+        font-size: 12px;
+        font-weight: 600;
+    }
+
+    .promotedProductsAlp__product-title {
+        margin: 4px 0 0 8px;
+    }
+
+    .promotedProductsAlp__product-title,
+    .promotedProductsAlp__original-price,
+    .promotedProductsAlp__discount {
+        font-size: 12px;
+        font-weight: 400;
+    }
+
+    .promotedProductsAlp__price-detail {
+        margin: 10px 0 0 8px;
+        gap: 8px;
+
+        .promotedProductsAlp__price {
+            font-size: 14px;
+            font-weight: 500;
+        }
+    }
+
+    .promotedProductsAlp__price-detail p {
+        margin-right: 0px;
+    }
+
+    .promotedProductsAlp__view-more {
+        display: block;
+
+        p {
+            text-align: center;
+            font-size: 16px;
+            font-weight: 400;
+        }
+    }
+
+    /* 
+        UI-revamp TODO :- below css needs to be revisited and refactored.
+    */
+    .promotedProductsAlp__brand {
+        margin: 4px 0 0 4px;
+        font-size: 14px;
+        font-weight: 600;
+        color: #333;
+    }
+
+    .promotedProductsAlp__product-title {
+        margin: 4px 0 0 4px;
+        font-size: 12px;
+        font-weight: 400;
+        color: #9d9d9d;
+    }
+
+    .promotedProductsAlp__price-detail {
+        margin: 4px 0 0 4px;
+        align-items: center;
+    }
+
+    .promotedProductsAlp__price {
+        font-size: 14px;
+        font-weight: 600;
+        color: #222;
+    }
+
+    .promotedProductsAlp__original-price {
+        font-size: 12px;
+        font-weight: 400;
+        color: #9d9d9d;
+    }
+
+    .promotedProductsAlp__discount {
+        font-size: 12px;
+        font-weight: 500;
+        color: #0aa051;
+    }
+}
