@@ -258,4 +258,16 @@
         font-weight: 500;
         color: #0aa051;
     }
+
+    .box {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .section--spacing {
+        padding-bottom: 8px !important;
+        padding-top: 8px !important;
+    }
 }
