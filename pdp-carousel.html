@@ -180,7 +180,7 @@
     <div class="container">
         <div class="pdpCarousel__grid">
             <div class="pdpCarousel__container">
-                <div class="splide pdpProductsThumbnailCarousel">
+                <div class="splide pdpProductsThumbnailCarousel" data-watch-first-image-load>
                     <div class="splide__track">
                         <ul class="splide__list">
                             <li class="splide__slide">
@@ -188,63 +188,63 @@
                                     alt="Women Copper Sleeveless Top With Front Tie-Ups">
                             </li>
                             <li class="splide__slide">
-                                <img style="max-width: 100%;" src="images/PDP-carousel-images/BD0A9072.jpg"
+                                <img style="max-width: 100%;" data-lazy-load-loadall-src="images/PDP-carousel-images/BD0A9072.jpg"
                                     alt="Women Copper Sleeveless Top With Front Tie-Ups">
                             </li>
                             <li class="splide__slide">
-                                <img style="max-width: 100%;" src="images/PDP-carousel-images/BD0A9073.jpg"
+                                <img style="max-width: 100%;" data-lazy-load-loadall-src="images/PDP-carousel-images/BD0A9073.jpg"
                                     alt="Women Copper Sleeveless Top With Front Tie-Ups">
                             </li>
                             <li class="splide__slide">
-                                <img style="max-width: 100%;" src="images/PDP-carousel-images/BD0A9075.jpg"
+                                <img style="max-width: 100%;" data-lazy-load-loadall-src="images/PDP-carousel-images/BD0A9075.jpg"
                                     alt="Women Copper Sleeveless Top With Front Tie-Ups">
                             </li>
                             <li class="splide__slide">
-                                <img style="max-width: 100%;" src="images/PDP-carousel-images/BD0A9077.jpg"
+                                <img style="max-width: 100%;" data-lazy-load-loadall-src="images/PDP-carousel-images/BD0A9077.jpg"
                                     alt="Women Copper Sleeveless Top With Front Tie-Ups">
                             </li>
                             <li class="splide__slide">
-                                <img style="max-width: 100%;" src="images/PDP-carousel-images/BD0A9080.jpg"
+                                <img style="max-width: 100%;" data-lazy-load-loadall-src="images/PDP-carousel-images/BD0A9080.jpg"
                                     alt="Women Copper Sleeveless Top With Front Tie-Ups">
                             </li>
                             <li class="splide__slide">
-                                <img style="max-width: 100%;" src="videos/sample_1--preview.png"
+                                <img style="max-width: 100%;" data-lazy-load-loadall-src="videos/sample_1--preview.png"
                                     alt="Women Copper Sleeveless Top With Front Tie-Ups">
-                            </li>                        
+                            </li>
                         </ul>
                     </div>
                 </div>
 
-                <div class="splide pdpProductsCarousel ">
+                <div class="splide pdpProductsCarousel" data-watch-first-video-load>
                     <div class="splide__track">
                         <ul class="splide__list">
                             <li class="splide__slide">
-                                <img style="max-width: 100%;" src="images/PDP-carousel-images/BD0A9070.jpg"
+                                <img style="max-width: 100%;" data-splide-lazy="images/PDP-carousel-images/BD0A9070.jpg"
                                     alt="Women Copper Sleeveless Top With Front Tie-Ups">
                             </li>
                             <li class="splide__slide">
-                                <img style="max-width: 100%;" src="images/PDP-carousel-images/BD0A9072.jpg"
+                                <img style="max-width: 100%;" data-splide-lazy="images/PDP-carousel-images/BD0A9072.jpg"
                                     alt="Women Copper Sleeveless Top With Front Tie-Ups">
                             </li>
                             <li class="splide__slide">
-                                <img style="max-width: 100%;" src="images/PDP-carousel-images/BD0A9073.jpg"
+                                <img style="max-width: 100%;" data-splide-lazy="images/PDP-carousel-images/BD0A9073.jpg"
                                     alt="Women Copper Sleeveless Top With Front Tie-Ups">
                             </li>
                             <li class="splide__slide">
-                                <img style="max-width: 100%;" src="images/PDP-carousel-images/BD0A9075.jpg"
+                                <img style="max-width: 100%;" data-splide-lazy="images/PDP-carousel-images/BD0A9075.jpg"
                                     alt="Women Copper Sleeveless Top With Front Tie-Ups">
                             </li>
                             <li class="splide__slide">
-                                <img style="max-width: 100%;" src="images/PDP-carousel-images/BD0A9077.jpg"
+                                <img style="max-width: 100%;" data-splide-lazy="images/PDP-carousel-images/BD0A9077.jpg"
                                     alt="Women Copper Sleeveless Top With Front Tie-Ups">
                             </li>
                             <li class="splide__slide">
-                                <img style="max-width: 100%;" src="images/PDP-carousel-images/BD0A9080.jpg"
+                                <img style="max-width: 100%;" data-splide-lazy="images/PDP-carousel-images/BD0A9080.jpg"
                                     alt="Women Copper Sleeveless Top With Front Tie-Ups">
                             </li>
                             <li class="splide__slide">
                                 <video style="max-width: 100%;" controls muted playsinline>
-                                    <source src="videos/sample_1.mp4" type="video/mp4" />
+                                    <source data-lazy-load-loadall-src="videos/sample_1.mp4" type="video/mp4" />
                                 </video>
                             </li>
                         </ul>
@@ -320,6 +320,52 @@
         }
 
         initSplide()
+
+
+
+        /*
+          dev note :- this is a very aggressive lazyload since splide 
+          lazyload: 'nearby' and 'sequential' options are less aggressive
+          in loading. 
+        */
+
+
+        const imgContainer = document.querySelector('[data-watch-first-image-load]')
+        const firstImage = imgContainer?.querySelector('img')
+        const imageCollection = imgContainer?.querySelectorAll('[data-lazy-load-loadall-src]')
+
+        const videoContainer = document.querySelector('[data-watch-first-video-load]')
+        const videoCollection = videoContainer?.querySelectorAll('[data-lazy-load-loadall-src]')
+
+        const loadRestOfTheImages = (images = []) => {
+            images?.forEach((el) => {
+                const elemSrc = el.dataset.lazyLoadLoadallSrc
+                el.setAttribute('src', elemSrc)
+            })
+        }
+
+        const loadRestOfTheVideos = (sources = []) => {
+            sources.forEach((source) => {
+                const src = source.dataset.lazyLoadLoadallSrc
+                if (!src) return
+                source.src = src
+                const video = source.closest('video')
+                if (video) {
+                    video.load()
+                }
+            })
+        }
+
+        if (firstImage?.complete && firstImage?.naturalWidth > 0) {
+            loadRestOfTheImages(imageCollection)
+            debugger
+            loadRestOfTheVideos(videoCollection)
+        } else {
+            setTimeout(() => {
+                loadRestOfTheImages(imageCollection)
+                loadRestOfTheVideos(videoCollection)
+            }, 6000);
+        }
 
     </script>
 
