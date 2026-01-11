@@ -365,9 +365,9 @@
             const imageCollection = document.querySelectorAll('[data-splide-lazy]');
             const videoCollection = document.querySelectorAll('[data-lazy-load-loadall-src]');
 
-            console.log(firstImage ,'firstImage')
-            console.log(imageCollection ,'imageCollection')
-            console.log(videoCollection ,'videoCollection')
+            console.log(firstImage, 'firstImage')
+            console.log(imageCollection, 'imageCollection')
+            console.log(videoCollection, 'videoCollection')
 
             if (!firstImage) return;
 
@@ -389,11 +389,13 @@
 
         window.addEventListener('DOMContentLoaded', () => {
             initSplide();
+
+            if (!checkForMobileDevice()) {
+                initLazyLoading();
+            }
+
         });
 
-        if (!checkForMobileDevice()) {
-            initLazyLoading();
-        }
 
 
     </script>
