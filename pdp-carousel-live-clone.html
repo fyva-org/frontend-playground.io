@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDP Playground</title>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" as="style">
+    <link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" rel="stylesheet"
+        media="print" onload="this.media='all'">
+
+    <style>
+        .container {
+            display: block;
+            margin: 0 auto;
+            max-width: 1320px !important;
+        }
+
+        video {
+            width: 100%;
+            height: 100%;
+        }
+
+        .pdpCarousel__grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+
+
+        .pdpProductsCarousel,
+        .pdpProductsThumbnailCarousel {
+            img {
+                border-radius: 8px;
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+                object-position: top;
+            }
+
+            .splide__slide {
+                cursor: pointer;
+            }
+        }
+
+        .pdpProductsThumbnailCarousel {
+            .splide__track {
+                height: 100% !important;
+                max-height: 97vh !important;
+            }
+        }
+
+        .pdpProductsCarousel {
+            .splide__track {
+                left: -10px;
+            }
+
+            .splide__list {
+                >li {
+                    position: relative;
+                    left: 10px;
+                }
+            }
+        }
+
+        .pdpCarousel__container {
+            display: grid;
+            grid-template-columns: 1fr 5fr;
+            gap: 16px;
+        }
+
+
+        @media screen and (max-width: 600px) {
+            .pdpProductsCarousel {
+                display: none !important;
+            }
+
+            .pdpCarousel__container {
+                grid-template-columns: 1fr 0;
+                gap: 0;
+            }
+
+            .pdpCarousel__wrapper {
+                position: relative;
+            }
+
+            .pdpCarousel__grid {
+                grid-template-columns: 1fr;
+            }
+
+            .pdpProductsThumbnailCarousel {
+                /* 
+          Below css snippet is required because of 
+          sales tags such as 'Best Seller' etc  
+        */
+
+                .splide__track {
+                    left: -10px;
+                }
+
+                .splide__list {
+                    >li:first-child {
+                        margin-right: 26px !important;
+                        /* glide gap is 16px , left offset for first image is 10px hence 26px */
+                        position: relative;
+                        left: 10px;
+                    }
+                }
+
+                .splide__slide {
+                    min-height: 43vh;
+                    background-color: #EFEFEF;
+                    border-radius: 8px;
+                }
+
+                /* 
+          END OF
+          sales tags such as 'Best Seller' etc  
+        */
+
+                visibility: visible !important;
+
+                img {
+                    width: calc(100vw - 80px);
+                }
+            }
+
+            .pdpProductsThumbnailCarousel.is-initialized {
+                img {
+                    width: 100%;
+                }
+            }
+        }
+
+        @media screen and (min-width: 768px) {
+
+            .pdpProductsCarousel {
+                overflow: visible !important;
+
+                .splide__track {
+                    overflow: visible !important;
+                }
+            }
+
+            .pdpProductsThumbnailCarousel {
+                min-height: auto !important;
+
+                .splide__slide:after,
+                .splide__slide:before {
+                    position: absolute;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    top: 0;
+                    border-radius: 8px;
+                    content: '';
+                    transition: all 0.25s;
+                    z-index: 5;
+                }
+
+                .splide__slide:before {
+                    z-index: 4;
+                    border: 4px solid transparent;
+                }
+
+                .splide__slide:after {
+                    border: 1px solid transparent;
+                }
+
+                .splide__slide.is-active:after {
+                    border: 1px solid #6e6e6e;
+                }
+
+                .splide__slide.is-active:before {
+                    border: 4px solid #fff;
+                }
+
+                .salesBadge__container,
+                .jdgm-review-mobile__container {
+                    display: none;
+                }
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="pdpCarousel__grid">
+            <div class="pdpCarousel__container">
+                <div class="splide pdpProductsThumbnailCarousel" data-watch-first-image-load>
+                    <div class="splide__track">
+                        <ul class="splide__list">
+                            <li class="splide__slide">
+                                <img style="max-width: 100%;" src="images/PDP-carousel-images/BD0A9070.jpg"
+                                    alt="Women Copper Sleeveless Top With Front Tie-Ups" loading="eager"
+                                    fetchpriority="high">
+                            </li>
+                            <li class="splide__slide">
+                                <img style="max-width: 100%;"
+                                    data-lazy-load-loadall-src="images/PDP-carousel-images/BD0A9072.jpg"
+                                    alt="Women Copper Sleeveless Top With Front Tie-Ups">
+                            </li>
+                            <li class="splide__slide">
+                                <img style="max-width: 100%;"
+                                    data-lazy-load-loadall-src="images/PDP-carousel-images/BD0A9073.jpg"
+                                    alt="Women Copper Sleeveless Top With Front Tie-Ups">
+                            </li>
+                            <li class="splide__slide">
+                                <img style="max-width: 100%;"
+                                    data-lazy-load-loadall-src="images/PDP-carousel-images/BD0A9075.jpg"
+                                    alt="Women Copper Sleeveless Top With Front Tie-Ups">
+                            </li>
+                            <li class="splide__slide">
+                                <img style="max-width: 100%;"
+                                    data-lazy-load-loadall-src="images/PDP-carousel-images/BD0A9077.jpg"
+                                    alt="Women Copper Sleeveless Top With Front Tie-Ups">
+                            </li>
+                            <li class="splide__slide">
+                                <img style="max-width: 100%;"
+                                    data-lazy-load-loadall-src="images/PDP-carousel-images/BD0A9080.jpg"
+                                    alt="Women Copper Sleeveless Top With Front Tie-Ups">
+                            </li>
+                            <li class="splide__slide">
+                                <img style="max-width: 100%;" data-lazy-load-loadall-src="videos/sample_1--preview.png"
+                                    alt="Women Copper Sleeveless Top With Front Tie-Ups">
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="splide pdpProductsCarousel">
+                    <div class="splide__track">
+                        <ul class="splide__list">
+                            <li class="splide__slide">
+                                <img style="max-width: 100%;" data-splide-lazy="images/PDP-carousel-images/BD0A9070.jpg"
+                                    alt="Women Copper Sleeveless Top With Front Tie-Ups">
+                            </li>
+                            <li class="splide__slide">
+                                <img style="max-width: 100%;" data-splide-lazy="images/PDP-carousel-images/BD0A9072.jpg"
+                                    alt="Women Copper Sleeveless Top With Front Tie-Ups">
+                            </li>
+                            <li class="splide__slide">
+                                <img style="max-width: 100%;" data-splide-lazy="images/PDP-carousel-images/BD0A9073.jpg"
+                                    alt="Women Copper Sleeveless Top With Front Tie-Ups">
+                            </li>
+                            <li class="splide__slide">
+                                <img style="max-width: 100%;" data-splide-lazy="images/PDP-carousel-images/BD0A9075.jpg"
+                                    alt="Women Copper Sleeveless Top With Front Tie-Ups">
+                            </li>
+                            <li class="splide__slide">
+                                <img style="max-width: 100%;" data-splide-lazy="images/PDP-carousel-images/BD0A9077.jpg"
+                                    alt="Women Copper Sleeveless Top With Front Tie-Ups">
+                            </li>
+                            <li class="splide__slide">
+                                <img style="max-width: 100%;" data-splide-lazy="images/PDP-carousel-images/BD0A9080.jpg"
+                                    alt="Women Copper Sleeveless Top With Front Tie-Ups">
+                            </li>
+                            <li class="splide__slide">
+                                <video style="max-width: 100%;" controls muted playsinline>
+                                    <source data-lazy-load-loadall-src="videos/sample_1.mp4" type="video/mp4" />
+                                </video>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+
+    <script>
+        const checkForMobileDevice = () => window.matchMedia(`(max-width: 600px)`).matches
+        const initSplide = () => {
+
+            if (document.querySelector(".pdpProductsCarousel") && document.querySelector(".pdpProductsThumbnailCarousel")) {
+                let main = null;
+                if (!checkForMobileDevice()) {
+                    main = new Splide('.pdpProductsCarousel', {
+                        type: 'fade',
+                        rewind: true,
+                        pagination: false,
+                        arrows: false,
+                        lazyLoad: 'nearby',
+                    });
+                }
+
+
+                const thumbnails = new Splide('.pdpProductsThumbnailCarousel', {
+                    gap: 10,
+                    pagination: false,
+                    isNavigation: true,
+                    mediaQuery: 'min',
+                    clones: 0,
+                    cloneStatus: false,
+                    rewind: true,
+                    rewindByDrag: true,
+                    keyboard: 'focused',
+                    breakpoints: {
+                        300: {
+                            direction: 'ltr',
+                            perPage: 1,
+                            lazyLoad: false,
+                            padding: {
+                                right: '40px'
+                            },
+                            gap: 16,
+                            arrows: false,
+                            rewind: false
+                        },
+                        768: {
+                            type: 'loop',
+                            fixedWidth: 88,
+                            fixedHeight: 120,
+                            direction: 'ttb',
+                            heightRatio: '0.2',
+                            lazyLoad: false,
+                            omitEnd: true,
+                            arrows: true,
+                            rewind: false
+                        }
+                    },
+                    classes: {
+                        prev: 'splide__arrow--prev splide__arrow--prevSmall splide__arrow--prevVertical',
+                        next: 'splide__arrow--next splide__arrow--prevSmall splide__arrow--nextVertical',
+                    }
+                })
+
+                main?.sync(thumbnails);
+                main?.mount();
+                thumbnails.mount();
+            }
+        }
+
+        const imgContainer = document.querySelector('[data-watch-first-image-load]')
+        const firstImage = imgContainer?.querySelector('img')
+        const imageCollection = imgContainer?.querySelectorAll('[data-lazy-load-loadall-src]')
+
+        const loadRestOfTheImages = (images = []) => {
+            images?.forEach((el) => {
+                const elemSrc = el.dataset.lazyLoadLoadallSrc
+                el.setAttribute('src', elemSrc)
+            })
+        }
+
+        if (firstImage?.complete && firstImage?.naturalWidth > 0) {
+            loadRestOfTheImages(imageCollection)
+        } else {
+            setTimeout(() => {
+                loadRestOfTheImages(imageCollection)
+            }, 2500);
+        }
+
+        initSplide();
+
+
+
+    </script>
+
+</body>
+
+</html>
