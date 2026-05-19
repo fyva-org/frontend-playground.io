@@ -80,8 +80,17 @@ body {
 }
 
 @keyframes bar-pulse {
-  0%, 100% { opacity: 1; background: #1D9E75; }
-  50%       { opacity: 0.5; background: #9FE1CB; }
+
+  0%,
+  100% {
+    opacity: 1;
+    background: #1D9E75;
+  }
+
+  50% {
+    opacity: 0.5;
+    background: #9FE1CB;
+  }
 }
 
 .tag-ribbon {
@@ -112,11 +121,17 @@ body {
   background: linear-gradient(90deg, #1D9E75, #9FE1CB, #5DCAA5, #1D9E75);
   background-size: 300% auto;
   animation: neon-march 2.5s linear infinite;
+  width: fit-content;
 }
 
 @keyframes neon-march {
-  0%   { background-position: 0% center; }
-  100% { background-position: 300% center; }
+  0% {
+    background-position: 0% center;
+  }
+
+  100% {
+    background-position: 300% center;
+  }
 }
 
 .tag-neon {
@@ -142,8 +157,15 @@ body {
 }
 
 @keyframes neon-dot-fade {
-  0%, 100% { opacity: 1; }
-  50%       { opacity: 0.3; }
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.3;
+  }
 }
 
 /* ──────────────────────────────────────────
@@ -160,6 +182,7 @@ body {
   font-weight: 500;
   color: #633806;
   cursor: default;
+  width: fit-content;
 }
 
 .tag-stars .tag-icon {
