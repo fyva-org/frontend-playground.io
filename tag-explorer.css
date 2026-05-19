@@ -1,0 +1,168 @@
+/* ── Reset & Base ── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: #f5f4f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+/* ── Layout ── */
+.showcase {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 2.5rem;
+  max-width: 480px;
+  width: 100%;
+}
+
+.showcase-title {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #888780;
+  margin-bottom: 0.5rem;
+}
+
+.tag-row {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.tag-label {
+  font-size: 11px;
+  font-weight: 500;
+  color: #888780;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.divider {
+  border: none;
+  border-top: 0.5px solid rgba(0, 0, 0, 0.08);
+}
+
+/* ──────────────────────────────────────────
+   Option 6 — Ribbon corner (vertical bar)
+────────────────────────────────────────── */
+.tag-ribbon-wrap {
+  display: inline-block;
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.tag-ribbon-wrap::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: #1D9E75;
+  border-radius: 8px 0 0 8px;
+  animation: bar-pulse 2.4s ease-in-out infinite;
+}
+
+@keyframes bar-pulse {
+  0%, 100% { opacity: 1; background: #1D9E75; }
+  50%       { opacity: 0.5; background: #9FE1CB; }
+}
+
+.tag-ribbon {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px 6px 14px;
+  background: #E1F5EE;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #085041;
+  cursor: default;
+}
+
+.tag-ribbon .tag-icon {
+  font-size: 14px;
+  color: #1D9E75;
+}
+
+/* ──────────────────────────────────────────
+   Option 8 — Marching border
+────────────────────────────────────────── */
+.tag-neon-outer {
+  display: inline-block;
+  padding: 1.5px;
+  border-radius: 100px;
+  background: linear-gradient(90deg, #1D9E75, #9FE1CB, #5DCAA5, #1D9E75);
+  background-size: 300% auto;
+  animation: neon-march 2.5s linear infinite;
+}
+
+@keyframes neon-march {
+  0%   { background-position: 0% center; }
+  100% { background-position: 300% center; }
+}
+
+.tag-neon {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5.5px 13px 5.5px 10px;
+  background: #E1F5EE;
+  border-radius: 100px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #085041;
+  cursor: default;
+}
+
+.neon-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #1D9E75;
+  flex-shrink: 0;
+  animation: neon-dot-fade 2.5s linear infinite;
+}
+
+@keyframes neon-dot-fade {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.3; }
+}
+
+/* ──────────────────────────────────────────
+   Option 9 — Star badge (static)
+────────────────────────────────────────── */
+.tag-stars {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px 6px 10px;
+  background: #FAEEDA;
+  border-radius: 100px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #633806;
+  cursor: default;
+}
+
+.tag-stars .tag-icon {
+  font-size: 14px;
+  color: #BA7517;
+}
