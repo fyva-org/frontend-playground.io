@@ -84,12 +84,12 @@ body {
   0%,
   100% {
     opacity: 1;
-    background: #1D9E75;
+    background: #008A89;
   }
 
   50% {
     opacity: 0.5;
-    background: #9FE1CB;
+    background: linear-gradient(90deg, #E0EEEE 0%, #FCFDFE 100%);
   }
 }
 
@@ -102,7 +102,7 @@ body {
   border-radius: 8px;
   font-size: 13px;
   font-weight: 500;
-  color: #085041;
+  color: #008A89;
   cursor: default;
 }
 
