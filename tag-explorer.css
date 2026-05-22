@@ -118,7 +118,7 @@ body {
   display: inline-block;
   padding: 1.5px;
   border-radius: 100px;
-  background:linear-gradient(90deg, #e34600, #ffd4c1, #ffd4c1, #e34600);
+  background: linear-gradient(90deg, #e34600, #ffd4c1, #ffd4c1, #e34600);
   background-size: 300% auto;
   animation: neon-march 2.5s linear infinite;
   width: fit-content;
@@ -188,4 +188,27 @@ body {
 .tag-stars .tag-icon {
   font-size: 14px;
   color: #BA7517;
+}
+
+
+.tag__category {
+  margin-bottom: 20px;
+  border: 1px solid #eee;
+  padding: 16px;
+  border-radius: 16px;
+}
+
+.tag__categoryTitle {
+  font-size: 12px;
+  font-weight: 600;
+  color: #888780;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.tag__wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
 }
