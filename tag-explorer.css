@@ -118,7 +118,7 @@ body {
   display: inline-block;
   padding: 1.5px;
   border-radius: 100px;
-  background: linear-gradient(90deg, #1D9E75, #9FE1CB, #5DCAA5, #1D9E75);
+  background: linear-gradient(90deg, #e34600, #ffd4c1, #ffd4c1, #e34600);
   background-size: 300% auto;
   animation: neon-march 2.5s linear infinite;
   width: fit-content;
