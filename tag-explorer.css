@@ -236,28 +236,6 @@ body {
   }
 }
 
-.tag__blue {
-
-  .tag-ribbon {
-    color: #0062e3;
-    background: linear-gradient(90deg, #d7d1ff 0%, #FFF 100%);
-  }
-
-  .neon-dot {
-    background: #0000e3;
-  }
-
-  .tag-icon {
-    color: #0000e3;
-  }
-
-  &.tag-ribbon-wrap::before {
-    background: #0000e3;
-    animation: bar-pulse-blue 2.4s ease-in-out infinite;
-  }
-}
-
-
 
 @keyframes bar-pulse-red {
 
@@ -273,16 +251,39 @@ body {
   }
 }
 
-@keyframes bar-pulse-blue {
+
+.tag__yellow {
+
+  .tag-ribbon {
+    color: #525000;
+    background: linear-gradient(90deg, #FFFEB9 0%, #FCFDFE 100%);
+  }
+
+  .neon-dot {
+    background: #F5F100;
+  }
+
+  .tag-icon {
+    color: #525000;
+  }
+
+  &.tag-ribbon-wrap::before {
+    background: #F5F100;
+    animation: bar-pulse-yellow 2.4s ease-in-out infinite;
+  }
+}
+
+
+@keyframes bar-pulse-yellow {
 
   0%,
   100% {
     opacity: 1;
-    background: #4800e3;
+    background: #F5F100;
   }
 
   50% {
     opacity: 0.5;
-    background: linear-gradient(90deg, #474ce6 0%, #cfdff0 100%);
+    background: linear-gradient(90deg, #FFFEB9 0%, #FCFDFE 100%);
   }
 }
