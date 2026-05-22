@@ -262,11 +262,11 @@ body {
   }
 
   .tag-neon-outer {
-    background: linear-gradient(90deg, #FFFEB9 0%, #FCFDFE 100%);
+    background: linear-gradient(90deg, #f5f100, #fffec0, #fffec0, #f5f100);
   }
 
   .neon-dot {
-    background: #F5F100;
+    background: #525000;
   }
 
   .tag-icon {
