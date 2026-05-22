@@ -98,11 +98,11 @@ body {
   align-items: center;
   gap: 6px;
   padding: 6px 14px 6px 14px;
-  background: #E1F5EE;
+  background: linear-gradient(90deg, #E0EEEE 0%, #FCFDFE 100%);
   border-radius: 8px;
   font-size: 13px;
   font-weight: 500;
-  color: #008A89;
+  color: #005252;
   cursor: default;
 }
 
