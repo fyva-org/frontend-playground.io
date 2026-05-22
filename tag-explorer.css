@@ -212,3 +212,77 @@ body {
   flex-wrap: wrap;
   gap: 16px;
 }
+
+
+
+.tag__red {
+
+  .tag-ribbon {
+    color: #E34600;
+    background: linear-gradient(90deg, #FFE2D1 0%, #FFF 100%);
+  }
+
+  .neon-dot {
+    background: #E34600;
+  }
+
+  .tag-icon {
+    color: #E34600;
+  }
+
+  &.tag-ribbon-wrap::before {
+    background: #E34600;
+    animation: bar-pulse-red 2.4s ease-in-out infinite;
+  }
+}
+
+.tag__blue {
+
+  .tag-ribbon {
+    color: #0062e3;
+    background: linear-gradient(90deg, #d7d1ff 0%, #FFF 100%);
+  }
+
+  .neon-dot {
+    background: #0000e3;
+  }
+
+  .tag-icon {
+    color: #0000e3;
+  }
+
+  &.tag-ribbon-wrap::before {
+    background: #0000e3;
+    animation: bar-pulse-blue 2.4s ease-in-out infinite;
+  }
+}
+
+
+
+@keyframes bar-pulse-red {
+
+  0%,
+  100% {
+    opacity: 1;
+    background: #E34600;
+  }
+
+  50% {
+    opacity: 0.5;
+    background: linear-gradient(90deg, #e65f47 0%, #cfdff0 100%);
+  }
+}
+
+@keyframes bar-pulse-blue {
+
+  0%,
+  100% {
+    opacity: 1;
+    background: #4800e3;
+  }
+
+  50% {
+    opacity: 0.5;
+    background: linear-gradient(90deg, #474ce6 0%, #cfdff0 100%);
+  }
+}
