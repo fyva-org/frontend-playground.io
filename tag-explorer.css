@@ -254,8 +254,13 @@ body {
 
 .tag__yellow {
 
-  .tag-ribbon {
+  .tag-ribbon,
+  .tag-neon {
     color: #525000;
+    background: linear-gradient(90deg, #FFFEB9 0%, #FCFDFE 100%);
+  }
+
+  .tag-neon-outer {
     background: linear-gradient(90deg, #FFFEB9 0%, #FCFDFE 100%);
   }
 
