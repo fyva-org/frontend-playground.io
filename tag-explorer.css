@@ -255,14 +255,14 @@ body {
 .tag__yellow {
 
   .tag-ribbon,
-  .tag-neon ,
-  .tag-stars{
+  .tag-neon,
+  .tag-stars {
     color: #525000;
     background: linear-gradient(90deg, #FFFEB9 0%, #FCFDFE 100%);
   }
 
-  .tag-neon-outer {
-   background: linear-gradient(90deg, #f5f100, #fffec0, #fffec0, #f5f100);
+  &.tag-neon-outer {
+    background: linear-gradient(90deg, #f5f100, #fffec0, #fffec0, #f5f100);
   }
 
   .neon-dot {
