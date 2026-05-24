@@ -112,7 +112,6 @@ body {
   display: inline-block;
   padding: 1.5px;
   border-radius: 100px;
-  background-size: 300% auto;
   animation: neon-march 2.5s linear infinite;
   width: fit-content;
 }
@@ -213,10 +212,6 @@ body {
     background: var(--tag-surface);
   }
 
-  &.tag-neon-outer {
-    background: var(--tag-outer-surface, var(--tag-surface));
-  }
-
   .neon-dot {
     background: var(--tag-accent);
   }
@@ -231,6 +226,38 @@ body {
   }
 }
 
+.tag-neon-outer.tag__red {
+  background: linear-gradient(90deg, #e34600, #ffc4aa, #ffc4aa, #e34600) 0% 0% / 300%;
+}
+
+.tag-neon-outer.tag__yellow {
+  background: linear-gradient(90deg, #f5f100, #fffec0, #fffec0, #f5f100) 0% 0% / 300%;
+}
+
+.tag-neon-outer.tag__green {
+  background: linear-gradient(90deg, #008a89, #e0eeee, #e0eeee, #008a89) 0% 0% / 300%;
+}
+
+.tag-neon-outer.tag__brown {
+  background: linear-gradient(90deg, #6e4a0c, #f9e7c8, #f9e7c8, #6e4a0c) 0% 0% / 300%;
+}
+
+.tag-neon-outer.tag__grape {
+  background: linear-gradient(90deg, #5a3558, #e1cce0, #e1cce0, #5a3558) 0% 0% / 300%;
+}
+
+.tag-neon-outer.tag__blue {
+  background: linear-gradient(90deg, #1b5288, #cce0f5, #cce0f5, #1b5288) 0% 0% / 300%;
+}
+
+.tag-neon-outer.tag__pink {
+  background: linear-gradient(90deg, #d50b92, #fdd9f1, #fdd9f1, #d50b92) 0% 0% / 300%;
+}
+
+.tag-neon-outer.tag__green-alt {
+  background: linear-gradient(90deg, #3e9438, #d4eed2, #d4eed2, #3e9438) 0% 0% / 300%;
+}
+
 .tag__red {
   --tag-accent: #E34600;
   --tag-surface: linear-gradient(90deg, #FFE2D1 0%, #FFFFFF 100%);
@@ -239,7 +266,6 @@ body {
 .tag__yellow {
   --tag-accent: #525000;
   --tag-surface: linear-gradient(90deg, #FFFEB9 0%, #FCFDFE 100%);
-  --tag-outer-surface: linear-gradient(90deg, #F5F100, #FFFEC0, #FFFEC0, #F5F100);
   --tag-bar-color: #F5F100;
 }
 
