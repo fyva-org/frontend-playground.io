@@ -256,7 +256,7 @@ body {
 
   .tag-ribbon,
   .tag-neon,
-  .tag-stars {
+  &.tag-stars {
     color: #525000;
     background: linear-gradient(90deg, #FFFEB9 0%, #FCFDFE 100%);
   }
