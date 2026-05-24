@@ -74,7 +74,6 @@ body {
   left: 0;
   width: 4px;
   height: 100%;
-  background: #1D9E75;
   border-radius: 8px 0 0 8px;
   animation: bar-pulse 2.4s ease-in-out infinite;
 }
@@ -84,12 +83,10 @@ body {
   0%,
   100% {
     opacity: 1;
-    background: #008A89;
   }
 
   50% {
     opacity: 0.5;
-    background: linear-gradient(90deg, #E0EEEE 0%, #FCFDFE 100%);
   }
 }
 
@@ -98,17 +95,14 @@ body {
   align-items: center;
   gap: 6px;
   padding: 6px 14px 6px 14px;
-  background: linear-gradient(90deg, #E0EEEE 0%, #FCFDFE 100%);
   border-radius: 8px;
   font-size: 13px;
   font-weight: 500;
-  color: #005252;
   cursor: default;
 }
 
 .tag-ribbon .tag-icon {
   font-size: 14px;
-  color: #1D9E75;
 }
 
 /* ──────────────────────────────────────────
@@ -118,7 +112,6 @@ body {
   display: inline-block;
   padding: 1.5px;
   border-radius: 100px;
-  background: linear-gradient(90deg, #e34600, #ffc4aa, #ffc4aa, #e34600);
   background-size: 300% auto;
   animation: neon-march 2.5s linear infinite;
   width: fit-content;
@@ -139,11 +132,9 @@ body {
   align-items: center;
   gap: 6px;
   padding: 5.5px 13px 5.5px 10px;
-  background: linear-gradient(90deg, #FFE2D1 0%, #FFF 100%);
   border-radius: 100px;
   font-size: 13px;
   font-weight: 500;
-  color: #E34600;
   cursor: default;
 }
 
@@ -151,7 +142,6 @@ body {
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background: #E34600;
   flex-shrink: 0;
   animation: neon-dot-fade 2.5s linear infinite;
 }
@@ -213,83 +203,86 @@ body {
   gap: 16px;
 }
 
-
-
-.tag__red {
-
-  .tag-ribbon {
-    color: #E34600;
-    background: linear-gradient(90deg, #FFE2D1 0%, #FFF 100%);
-  }
-
-  .neon-dot {
-    background: #E34600;
-  }
-
-  .tag-icon {
-    color: #E34600;
-  }
-
-  &.tag-ribbon-wrap::before {
-    background: #E34600;
-    animation: bar-pulse-red 2.4s ease-in-out infinite;
-  }
-}
-
-
-@keyframes bar-pulse-red {
-
-  0%,
-  100% {
-    opacity: 1;
-    background: #E34600;
-  }
-
-  50% {
-    opacity: 0.5;
-    background: linear-gradient(90deg, #e65f47 0%, #cfdff0 100%);
-  }
-}
-
-
-.tag__yellow {
+/* ---------- */
+:is(.tag__red, .tag__yellow, .tag__green, .tag__brown, .tag__grape, .tag__blue, .tag__pink, .tag__green-alt) {
 
   .tag-ribbon,
   .tag-neon,
   &.tag-stars {
-    color: #525000;
-    background: linear-gradient(90deg, #FFFEB9 0%, #FCFDFE 100%);
+    color: var(--tag-accent);
+    background: var(--tag-surface);
   }
 
   &.tag-neon-outer {
-    background: linear-gradient(90deg, #f5f100, #fffec0, #fffec0, #f5f100);
+    background: var(--tag-outer-surface, var(--tag-surface));
   }
 
   .neon-dot {
-    background: #525000;
+    background: var(--tag-accent);
   }
 
   .tag-icon {
-    color: #525000;
+    color: var(--tag-accent);
   }
 
   &.tag-ribbon-wrap::before {
-    background: #F5F100;
-    animation: bar-pulse-yellow 2.4s ease-in-out infinite;
+    background: var(--tag-bar-color, var(--tag-accent));
+    animation: bar-pulse-theme 2.4s ease-in-out infinite;
   }
 }
 
+.tag__red {
+  --tag-accent: #E34600;
+  --tag-surface: linear-gradient(90deg, #FFE2D1 0%, #FFFFFF 100%);
+}
 
-@keyframes bar-pulse-yellow {
+.tag__yellow {
+  --tag-accent: #525000;
+  --tag-surface: linear-gradient(90deg, #FFFEB9 0%, #FCFDFE 100%);
+  --tag-outer-surface: linear-gradient(90deg, #F5F100, #FFFEC0, #FFFEC0, #F5F100);
+  --tag-bar-color: #F5F100;
+}
+
+.tag__green {
+  --tag-accent: #008A89;
+  --tag-surface: linear-gradient(90deg, #E0EEEE 0%, #FCFDFE 100%);
+}
+
+.tag__brown {
+  --tag-accent: #6E4A0C;
+  --tag-surface: linear-gradient(90deg, #F9E7C8 0%, #FCFDFE 100%);
+}
+
+.tag__grape {
+  --tag-accent: #5A3558;
+  --tag-surface: linear-gradient(90deg, #E1CCE0 0%, #FCFDFE 100%);
+}
+
+.tag__blue {
+  --tag-accent: #1B5288;
+  --tag-surface: linear-gradient(90deg, #CCE0F5 0%, #FCFDFE 100%);
+}
+
+.tag__pink {
+  --tag-accent: #D50B92;
+  --tag-surface: linear-gradient(90deg, #FDD9F1 0%, #FCFDFE 100%);
+}
+
+.tag__green-alt {
+  --tag-accent: #3E9438;
+  --tag-surface: linear-gradient(90deg, #D4EED2 0%, #FCFDFE 100%);
+}
+
+@keyframes bar-pulse-theme {
 
   0%,
   100% {
     opacity: 1;
-    background: #F5F100;
+    background: var(--tag-bar-color, var(--tag-accent));
   }
 
   50% {
     opacity: 0.5;
-    background: linear-gradient(90deg, #FFFEB9 0%, #FCFDFE 100%);
+    background: var(--tag-surface);
   }
 }
