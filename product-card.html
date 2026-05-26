@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bestseller Card – SMUKK</title>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #f5f5f5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    /* ── Card ── */
+    .card {
+      background: #ffffff;
+      border-radius: 8px;
+      width: 159px;
+      overflow: hidden;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+      cursor: pointer;
+      transition: box-shadow 0.2s ease, transform 0.2s ease;
+    }
+    .card:hover {
+      box-shadow: 0 6px 18px rgba(0,0,0,0.13);
+      transform: translateY(-2px);
+    }
+
+    /* ── Product Image ── */
+    .card__image {
+      width: 100%;
+      height: 212px;
+      border-radius: 8px 8px 0 0;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* ── Info Section ── */
+    .card__info {
+      padding: 8px 10px 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .card__brand {
+      font-size: 12px;
+      font-weight: 600;
+      color: #000000;
+      line-height: 1.5;
+      letter-spacing: 0.01em;
+    }
+
+    .card__title {
+      font-size: 12px;
+      font-weight: 400;
+      color: #000000;
+      line-height: 1.48;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    /* ── Pricing Row ── */
+    .card__pricing {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      margin-top: 4px;
+      flex-wrap: wrap;
+    }
+
+    .card__price {
+      font-size: 14px;
+      font-weight: 500;
+      color: #000000;
+      line-height: 1.4;
+    }
+
+    .card__mrp {
+      font-size: 12px;
+      font-weight: 400;
+      color: #6f6e6e;
+      text-decoration: line-through;
+      line-height: normal;
+    }
+
+    .card__discount {
+      font-size: 12px;
+      font-weight: 400;
+      color: #0aa051;
+      line-height: normal;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <img
+      class="card__image"
+      src="https://www.figma.com/api/mcp/asset/7fb704b9-19ca-4470-9c23-74247dd56769"
+      alt="Magenta Above Knee Solid Dress"
+    />
+    <div class="card__info">
+      <p class="card__brand">SMUKK</p>
+      <p class="card__title">Magenta Above Knee So..</p>
+      <div class="card__pricing">
+        <span class="card__price">₹599</span>
+        <span class="card__mrp">₹2,399</span>
+        <span class="card__discount">51%</span>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
